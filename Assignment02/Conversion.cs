@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignment02
 {
+    /**
+     * Conversion class of temperature. Created the criteria of having no decimal point in every 
+     * conversion.
+     */
     public class Conversion
     {
 
@@ -37,7 +41,7 @@ namespace Assignment02
 
         public double ConvertKelvinToFahrenheit()
         {
-            double value = (1.8 * (conversionObj - 273)) + 32;
+            double value = (1.8 * (conversionObj - 273.15)) + 32;
             return Math.Round(value,
                                MidpointRounding.AwayFromZero);
         }

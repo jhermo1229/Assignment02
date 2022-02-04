@@ -13,31 +13,32 @@ namespace Assignment02
         private void Go()
         {
 
-            int value;
-            String bb = "";
-            Boolean isCorrect = false;
-            Boolean isTrue = false;
+            int valueTobeConverted;
+            String rawValue = "";
+            Boolean isValueValid = false;
 
-
-            while (!(isCorrect))
+            //Loop until entered value is valid
+            while (!(isValueValid))
             {
                 
                 Console.WriteLine("Enter the value to be converted:");
-                bb = Console.ReadLine();
-                isCorrect= (int.TryParse(bb, out value) && value > 0);
+                rawValue = Console.ReadLine();
+                isValueValid= (int.TryParse(rawValue, out valueTobeConverted) && valueTobeConverted > 0);
 
-                if (!isCorrect)
+                if (!isValueValid)
                 {
-                    Console.WriteLine("Please input numeric value greater than 0");
+                    Console.WriteLine("--Please input numeric value greater than 0--");
                     Console.WriteLine(" ");
                 }
             }
-            value = int.Parse(bb);
+            valueTobeConverted = int.Parse(rawValue);
 
 
             int choice = 0;
-            String aaa = "";
+            String rawChoice;
+            Boolean isChoiceValid;
 
+            //loop until choice is equivalent to 7
             while (choice != 7)
             {
                 Console.WriteLine("Please choose the conversion by entering the number:");
@@ -48,50 +49,43 @@ namespace Assignment02
                 Console.WriteLine("5. Convert Kelvin to Celsius");
                 Console.WriteLine("6. Convert Kelvin to Fahrenheit");
                 Console.WriteLine("7. Exit ");
-                aaa = Console.ReadLine();
-                isTrue = (int.TryParse(aaa, out choice) && (choice > 0 && choice < 8));
+                rawChoice = Console.ReadLine();
+                isChoiceValid = (int.TryParse(rawChoice, out choice) && (choice > 0 && choice < 8));
 
-                if (!isTrue)
+                if (!isChoiceValid)
                 {
-                    Console.WriteLine("Please input the correct choice from the menu");
+                    Console.WriteLine("--Please input the correct choice from the menu--");
                     Console.WriteLine(" ");
                 }
                 else
                 {
-                    choice = int.Parse(aaa);                    
-                    Console.WriteLine(Conversion(choice, value));                    
+                    choice = int.Parse(rawChoice);                    
+                    Console.WriteLine(Conversion(choice, valueTobeConverted));                    
                 }
             }
                       
         }
-
+        //Conversion method that will call the class
         private Double Conversion(int choice, int value)
         {
-            Double aa = 0.0;
-            Conversion c = new(value);
+            Conversion conversion = new(value);
             switch (choice)
             {
-                case 1:                    
-                    aa = c.ConvertCelsiusToFahrenheit();
-                    return aa;
+                case 1: 
+                    return conversion.ConvertCelsiusToFahrenheit();
                 case 2:
-                    aa = c.ConvertCelsiusToKelvin();
-                    return aa;
+                    return conversion.ConvertCelsiusToKelvin();
                 case 3:
-                    aa = c.ConvertFahrenheitToCelsius();
-                    return aa;
+                    return conversion.ConvertFahrenheitToCelsius();
                 case 4:
-                    aa = c.ConvertFahrenheitToKelvin();
-                    return aa;
+                    return conversion.ConvertFahrenheitToKelvin();
                 case 5:
-                    aa = c.ConvertKelvinToCelsius();
-                    return aa;
+                    return conversion.ConvertKelvinToCelsius();
                 case 6:
-                    aa = c.ConvertKelvinToFahrenheit();
-                    return aa;
+                    return conversion.ConvertKelvinToFahrenheit();
 
                 default:
-                    return aa;
+                    return 0.0;
             }
         }
     }
