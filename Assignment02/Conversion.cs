@@ -41,7 +41,7 @@ namespace Assignment02
 
         public double ConvertKelvinToFahrenheit()
         {
-            double value = (1.8 * (conversionObj - 273.15)) + 32;
+            double value = (1.8* (conversionObj - 273) + 32);
             return Math.Round(value,
                                MidpointRounding.AwayFromZero);
         }
@@ -55,7 +55,7 @@ namespace Assignment02
 
         public double ConvertFahrenheitToKelvin()
         {
-            double value = (((conversionObj-32) * 5) / 9) + 273.15;
+            double value = (((conversionObj-32) * 5) / 9) + 273;
             return Math.Round(value,
                                MidpointRounding.AwayFromZero);
         }
