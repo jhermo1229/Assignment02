@@ -21,40 +21,46 @@ namespace Assignment02
             this.conversionObj = conversionObj;
         }
 
-        public double ConvertCelciusToFahrenheit()
+        public double ConvertCelsiusToFahrenheit()
         {
             double value = (conversionObj * 1.8) + 32;
-            return value;
+            return Math.Round(value,
+                               MidpointRounding.AwayFromZero);
         }
 
-        public double ConvertCelciusToKelvin()
+        public double ConvertCelsiusToKelvin()
         {
             double value = (conversionObj + 273) ;
-            return value;
+            return Math.Round(value,
+                               MidpointRounding.AwayFromZero);
         }
 
         public double ConvertKelvinToFahrenheit()
         {
             double value = (1.8 * (conversionObj - 273)) + 32;
-            return value;
+            return Math.Round(value,
+                               MidpointRounding.AwayFromZero);
         }
 
         public double ConvertKelvinToCelsius()
         {
             double value = conversionObj - 273;
-            return value;
+            return Math.Round(value,
+                               MidpointRounding.AwayFromZero);
         }
 
         public double ConvertFahrenheitToKelvin()
         {
             double value = (((conversionObj-32) * 5) / 9) + 273.15;
-            return value;
+            return Math.Round(value,
+                               MidpointRounding.AwayFromZero);
         }
 
         public double ConvertFahrenheitToCelsius()
         {
-            double value = (conversionObj - 32) * 1.8;
-            return value;
+            double value = (conversionObj - 32)/1.8;
+            return Math.Round(value,
+                               MidpointRounding.AwayFromZero);
         }
 
     }

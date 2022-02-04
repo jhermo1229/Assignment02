@@ -40,8 +40,6 @@ namespace Assignment02
 
             while (choice != 7)
             {
-
-
                 Console.WriteLine("Please choose the conversion by entering the number:");
                 Console.WriteLine("1. Convert Celsius to Fahrenheit");
                 Console.WriteLine("2. Convert Celsius to Kelvin");
@@ -74,10 +72,10 @@ namespace Assignment02
             switch (choice)
             {
                 case 1:                    
-                    aa = c.ConvertCelciusToFahrenheit();
+                    aa = c.ConvertCelsiusToFahrenheit();
                     return aa;
                 case 2:
-                    aa = c.ConvertCelciusToKelvin();
+                    aa = c.ConvertCelsiusToKelvin();
                     return aa;
                 case 3:
                     aa = c.ConvertFahrenheitToCelsius();
