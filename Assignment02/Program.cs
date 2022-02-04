@@ -14,7 +14,7 @@ namespace Assignment02
         {
 
             int valueTobeConverted;
-            String rawValue = "";
+            String rawValue = String.Empty;
             Boolean isValueValid = false;
 
             //Loop until entered value is valid

@@ -3,7 +3,7 @@ using System;
 
 namespace Assignment02.Test
 {
-    public class Tests
+    public class ConversionTest
     {
         [SetUp]
         public void Setup()
@@ -41,6 +41,17 @@ namespace Assignment02.Test
         }
 
         [Test]
+        public void ConvertCelsiusToFahrenheit_WhenInputIs0_ReturnIs32()
+        {
+            Conversion c = new(0);
+            Double expectedValue = 32;
+
+            Double value = c.ConvertCelsiusToFahrenheit();
+
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
         public void ConvertCelsiusToKelvin_WhenNothingIsSetDefaultValueIs1_ReturnIs274()
         {
             Conversion c = new();
@@ -64,6 +75,17 @@ namespace Assignment02.Test
         {
             Conversion c = new(100);
             Double expectedValue = 373;
+
+            Double value = c.ConvertCelsiusToKelvin();
+
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertCelsiusToKelvin_WhenInputIsNegative1_ReturnIs272()
+        {
+            Conversion c = new(-1);
+            Double expectedValue = 272;
 
             Double value = c.ConvertCelsiusToKelvin();
 
@@ -101,6 +123,17 @@ namespace Assignment02.Test
         }
 
         [Test]
+        public void ConvertFahrenheitToCelsius_WhenInputIs101_ReturnIs38()
+        {
+            Conversion c = new(101);
+            Double expectedValue = 38;
+
+            Double value = c.ConvertFahrenheitToCelsius();
+
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
         public void ConvertFahrenheitToKelvin_WhenNothingIsSetDefaultValueIs1_ReturnIs256()
         {
             Conversion c = new();
@@ -124,6 +157,17 @@ namespace Assignment02.Test
         {
             Conversion c = new(100);
             Double expectedValue = 310;
+
+            Double value = c.ConvertFahrenheitToKelvin();
+
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertFahrenheitToKelvin_WhenInputIsNegative460_ReturnIs0()
+        {
+            Conversion c = new(-460);
+            Double expectedValue = 0;
 
             Double value = c.ConvertFahrenheitToKelvin();
 
@@ -162,6 +206,17 @@ namespace Assignment02.Test
         }
 
         [Test]
+        public void ConvertKelvinToCelsius_WhenInputIsNegative173_ReturnIsNegative446()
+        {
+            Conversion c = new(-173);
+            Double expectedValue = -446;
+
+            Double value = c.ConvertKelvinToCelsius();
+
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
         public void ConvertKelvinToFahrenheit_WhenNothingIsSetDefaultValueIs1_ReturnIsNegative458()
         {
             Conversion c = new();
@@ -185,6 +240,17 @@ namespace Assignment02.Test
         {
             Conversion c = new(100);
             Double expectedValue = -279;
+
+            Double value = c.ConvertKelvinToFahrenheit();
+
+            Assert.AreEqual(expectedValue, value);
+        }
+
+        [Test]
+        public void ConvertKelvinToFahrenheit_WhenInputIs0_ReturnIsNegative459()
+        {
+            Conversion c = new(0);
+            Double expectedValue = -460;
 
             Double value = c.ConvertKelvinToFahrenheit();
 
