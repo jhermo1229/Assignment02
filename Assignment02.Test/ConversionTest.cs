@@ -247,10 +247,10 @@ namespace Assignment02.Test
         }
 
         [Test]
-        public void ConvertKelvinToFahrenheit_WhenInputIs0_ReturnIsNegative460()
+        public void ConvertKelvinToFahrenheit_WhenInputIs0_ReturnIsNegative459()
         {
             Conversion c = new(0);
-            Double expectedValue = -460;
+            Double expectedValue = -459;
 
             Double value = c.ConvertKelvinToFahrenheit();
 
